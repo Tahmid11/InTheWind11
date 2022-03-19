@@ -1,6 +1,7 @@
 
 // You cant use class to assign a class name, you need to use className.
 // You can only put stuff within div.
+
 import FirstPage from "./Components/FirstPage";
 import SecondPage from "./Components/SecondPage";
 import ThirdPage from "./Components/ThirdPage";
@@ -15,6 +16,7 @@ import { BrowserRouter as Router, Routes,Route} from "react-router-dom";
 function App() {
   // const [Location,setLocation]=useState('');
   // const [weather,setWeather]=useState([]);
+
 
 
 
@@ -49,19 +51,21 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="background1">
+      <main>
+      <div className="App">
       
 
-      <Router>
-        <Routes>
+        <Router>
+          <Routes>
 
   
 
-          <Route path="/" element={<FirstPage/>}></Route>
-          <Route path="/FirstPage" element={<FirstPage/>}></Route>
+            <Route path="/" element={<FirstPage/>}></Route>
+            <Route path="/FirstPage" element={<FirstPage/>}></Route>
     
-          <Route path="/SecondPage" element={<SecondPage/>}/>
-          <Route path="/ThirdPage" element={<ThirdPage/>}/>
+            <Route path="/SecondPage" element={<SecondPage/>}/>
+            <Route path="/ThirdPage" element={<ThirdPage/>}/>
           
 
           </Routes>
@@ -90,7 +94,9 @@ function App() {
 
 
 
-    </div>
+        </div>
+      </main>
+  </div>
   )
 }
 

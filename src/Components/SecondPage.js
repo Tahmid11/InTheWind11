@@ -21,7 +21,6 @@ function SecondPage(){
         <p>This is the second page.</p>
         <button onClick={() => navigate("/ThirdPage")}>Go To Third Page</button>
         <button onClick={() => navigate("/FirstPage")}>Go To First Page</button>
-        <button onClick={()=>navigate(0)}>Second Page</button>
         </div>
     )
     }

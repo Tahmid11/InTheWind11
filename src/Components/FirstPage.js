@@ -1,4 +1,5 @@
 import React from "react";
+
 import {useNavigate} from "react-router-dom";
 
 import { useState } from "react";
@@ -43,14 +44,12 @@ function FirstPage(){
       }}
 
     return (
+
     <div>
-        <h1>First Page</h1>
-        <p>This is the First page</p>
+        <input type="text" value={Location} className="searchBar" onChange={EVENT=> setLocation(EVENT.target.value)} placeholder="Type a Location" onKeyPress={searchLocation}   ></input>
 
         <button onClick={() => nav("/ThirdPage")}>Go To Third Page</button>
-        <button onClick={()=>nav(0)}>First Page</button>
         <button onClick={() => nav("/SecondPage")}>Go To Second Page</button>
-        <input type="text" value={Location} className="searchBar" onChange={EVENT=> setLocation(EVENT.target.value)} placeholder="Type a Location" onKeyPress={searchLocation}   ></input>
     
           
         {(!typeof weather.current!="undefined" && weather.length!=0)? (
