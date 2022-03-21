@@ -11,7 +11,7 @@ function FirstPage(){
   let LocationInput ="";
      const nav=useNavigate();
      const [Location,setLocation]=useState('');
-     const [Location2,setLocation2]=useState('');
+     const [LocationAPI,setLocation2]=useState('');
 
     const [weather,setWeather]=useState([]);
 
@@ -28,9 +28,15 @@ function FirstPage(){
   const searchLocation=(EVENT) =>{
 
     if (EVENT.key==="Enter"){      
+
       axios.get(url).then((Response)=>{ 
-        setLocation2(Location);
         
+        axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${Location},GB&limit=1&appid=d559bc18da1537d61bf16fb76b5e30d5`).then((Reply)=>{
+          setLocation2(Reply.data)
+    
+    
+    
+          })
 
         setLocation('')
         let lat=(Response.data[0].lat)
@@ -52,7 +58,6 @@ function FirstPage(){
     return (
 
     <div>
-      <h1>{Location2}</h1>
         
         <button onClick={() => nav("/ThirdPage")}>Go To Third Page</button>
         <button onClick={() => nav("/SecondPage")}>Go To Second Page</button>
@@ -69,6 +74,8 @@ function FirstPage(){
         
         <div className="results">
           {console.log(weather)}
+          {console.log(Location)}
+          <h1>{LocationAPI[0].name}</h1>
           {weather.current.weather[0].description},
           {weather.current.temp},
           {weather.current.clouds},
