@@ -9,9 +9,24 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from 'axios';
 
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+import "./styles.css";
+
+// import required modules
+import { Pagination } from "swiper";
+
+
 import { BrowserRouter as Router, Routes,Route} from "react-router-dom";
 
-// Use back ticks for links (`) and then use $(variableName) to call the variable.
+
+
 
 function App() {
   // const [Location,setLocation]=useState('');
@@ -51,6 +66,9 @@ function App() {
 
 
   return (
+
+
+
     <div className="background1">
       <main>
       <div className="App">
@@ -71,29 +89,6 @@ function App() {
           </Routes>
           
       </Router>
-      {/* <input type="text" value={Location} className="searchBar" onChange={EVENT=> setLocation(EVENT.target.value)} placeholder="Type a Location" onKeyPress={searchLocation}   ></input>
-
-      
-    {(!typeof weather.current!="undefined" && weather.length!=0)? (
-    <div>
-      {console.log(weather)}
-      {weather.current.temp},
-
-      {weather.current.clouds},
-      {weather.current.wind_speed}
-    </div>
-
-    ):('')} */}
-
-      
-
-
-
-
-
-
-
-
         </div>
       </main>
   </div>

@@ -12,16 +12,15 @@ function FirstPage(){
      const nav=useNavigate();
      const [Location,setLocation]=useState('');
      const [LocationAPI,setLocation2]=useState('');
+     const [LocationSAVE,setLocationSAVE]=useState('');
 
     const [weather,setWeather]=useState([]);
 
-
-
-  
-
-
-
   const url=`https://api.openweathermap.org/geo/1.0/direct?q=${Location},GB&limit=1&appid=d559bc18da1537d61bf16fb76b5e30d5`
+
+  //saving data inputs 
+
+
 
 
 
@@ -29,10 +28,12 @@ function FirstPage(){
 
     if (EVENT.key==="Enter"){      
 
+      
       axios.get(url).then((Response)=>{ 
         
         axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${Location},GB&limit=1&appid=d559bc18da1537d61bf16fb76b5e30d5`).then((Reply)=>{
-          setLocation2(Reply.data)
+          setLocation2(Reply.data);
+          setLocationSAVE(Reply.data);
     
     
     
@@ -53,11 +54,26 @@ function FirstPage(){
   
 
       }}
+
+    React.useEffect(() =>{
+      localStorage.setItem('location', JSON.stringify(LocationSAVE));
+    });
+
+    React.useEffect(() =>{
+      const data = localStorage.getItem('location');
+      if (data){
+        console.log(data);
+      }
+    });
+
+
       
+
 
     return (
 
     <div>
+      <h1 id="LocationHead" className="LocationHeader">Welcome</h1>
         
         <button onClick={() => nav("/ThirdPage")}>Go To Third Page</button>
         <button onClick={() => nav("/SecondPage")}>Go To Second Page</button>
@@ -70,12 +86,11 @@ function FirstPage(){
     
           
         {(!typeof weather.current!="undefined" && weather.length!=0)? (
+                  document.getElementById("LocationHead").innerHTML = LocationAPI[0].name,
+          
           
         
         <div className="results">
-          {console.log(weather)}
-          {console.log(Location)}
-          <h1>{LocationAPI[0].name}</h1>
           {weather.current.weather[0].description},
           {weather.current.temp},
           {weather.current.clouds},
@@ -90,4 +105,5 @@ function FirstPage(){
       
     )
 }
+
 export default FirstPage;
