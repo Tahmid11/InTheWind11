@@ -33,6 +33,7 @@ useEffect( () => {
     console.log("IT is not empty.")
     // String->JSON Object
     const weatherObject = JSON.parse(localStorage.getItem('Weather'));
+    document.getElementById("LocationHead").innerHTML = JSON.parse(localStorage.getItem('location'));
     setWeather(weatherObject);
   }
 }, []);
@@ -40,14 +41,17 @@ useEffect( () => {
 
   const searchLocation=(EVENT) =>{
 
-    if (EVENT.key==="Enter"){      
+    if (EVENT.key==="Enter"){     
 
       
       axios.get(url).then((Response)=>{ 
         
 
           setLocation2(Response.data);
-          setLocationSAVE(Response.data);
+          console.log(LocationAPI[0].name);
+          localStorage.setItem('location', JSON.stringify(Response.data[0].name));
+          document.getElementById("LocationHead").innerHTML = Response.data[0].name;
+          
         
           
     
@@ -109,11 +113,11 @@ useEffect( () => {
 
 
         {weather.length !== 0 ? <div className="results">
+          
           {weather.current.weather[0].description},
           {weather.current.temp},
           {weather.current.clouds},
           {weather.current.wind_speed}
-          {console.log(localStorage.getItem('location'))}
 
         </div> : <div></div>}
     
