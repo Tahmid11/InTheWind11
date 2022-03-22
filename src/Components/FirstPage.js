@@ -14,6 +14,10 @@ function FirstPage(){
      const [top3essentials,setTop3Essentials]=useState([]);
      let arrayOfTop3Essentials=[];
 
+     
+    const [extraWeatherInformation,setExtraWeatherInformation]=useState([]);
+
+
   const url=`https://api.openweathermap.org/geo/1.0/direct?q=${Location},GB&limit=1&appid=d559bc18da1537d61bf16fb76b5e30d5`
 
   //saving data inputs 
@@ -43,6 +47,12 @@ useEffect( () => {
     setWeather(weatherObject)
     setTop3Essentials(arrayOfTop3Essentials)
 
+      // arrayOfExtraWeatherInformation.push(weatherObject.data.current.dew_point)
+      // arrayOfExtraWeatherInformation.push(Reply.data.humidity)
+      // setExtraWeatherInformation(arrayOfExtraWeatherInformation)
+      // console.log("This is array of Extra Info:",arrayOfExtraWeatherInformation)
+
+
   }
 }, []);
   const searchLocation=(EVENT) =>{
@@ -61,9 +71,16 @@ useEffect( () => {
         
       axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=alerts,minutely&appid=d559bc18da1537d61bf16fb76b5e30d5&units=metric`).then((Reply)=>{
       setWeather(Reply.data)
+      setExtraWeatherInformation(Reply.data)
+      
+      
+
+
       // JSON Object ->String.
       localStorage.setItem('Weather', JSON.stringify(Reply.data));
       localStorage.setItem('temp', Reply.data.current.temp);
+
+      
 
       window.location.reload(false);
 
@@ -73,6 +90,10 @@ useEffect( () => {
   
 
       } }
+  const hasBeenClicked=() =>{
+    console.log(extraWeatherInformation)
+  }
+ 
 
     return (
 
@@ -93,7 +114,7 @@ useEffect( () => {
         <input type="text" value={Location} className="searchBar" onChange={EVENT=> setLocation(EVENT.target.value)} placeholder="Type a Location" onKeyPress={searchLocation} ></input>
 
 
-        {weather.length !== 0 && top3essentials.length!==0 ? <div className="results">
+        {weather.length !== 0 && top3essentials.length!==0? <div className="results">
         <div className="temp">
         {Math.round(weather.current.temp)}</div>
           <div className="Wdescription">
@@ -105,6 +126,30 @@ useEffect( () => {
             {top3essentials[0]},
             {top3essentials[1]},
             {top3essentials[2]}
+          </div>
+          <div className="dropdown">
+              <button className="dropbtn1">Dropdown1</button>
+             <div className="dropdown-content">
+                <button onClick={hasBeenClicked}>Clouds</button>
+                <a href="#">Dew Point</a>
+                <a href="#">Relative Humidity</a>
+                </div>
+          </div>
+          <div className="dropdown">
+              <button className="dropbtn2">Dropdown2</button>
+             <div className="dropdown-content">
+                <a>Clouds</a>
+                <a>Dew Point</a>
+                <a>Relative Humidity</a>
+                </div>
+          </div>
+          <div className="dropdown">
+              <button className="dropbtn3">Dropdown</button>
+             <div className="dropdown-content">
+                <a href="#">Clouds</a>
+                <a href="#">Dew Point</a>
+                <a href="#">Relative Humidity</a>
+                </div>
           </div>
 
         </div> : <div></div>}
