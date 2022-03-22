@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import run from './assets/transparent.gif';
+import dot from './assets/page1.jpg.png';
 
 import {useNavigate} from "react-router-dom";
 
@@ -80,21 +81,6 @@ useEffect( () => {
 
       }}
 
-    // React.useEffect(() =>{
-    //   {
-    //   localStorage.setItem('location', JSON.stringify(LocationSAVE));
-    // }});
-
-    // React.useEffect(() =>{
-    //   const data = localStorage.getItem('location');
-    //   if (data){
-    //     console.log(data);
-    //     return data
-
-
-    //   }
-      
-    // }
 
 
       
@@ -105,9 +91,15 @@ useEffect( () => {
     <div>
       <h1 id="LocationHead" className="LocationHeader">Welcome</h1>
       <img src={run} className="rungif" />
-        
-        <button onClick={() => nav("/ThirdPage")}>Go To Third Page</button>
-        <button onClick={() => nav("/SecondPage")}>Go To Second Page</button>
+        <div className="navbutton">
+        <div style={{float: 'right'}}>
+        <button onClick={() => nav("/ThirdPage")} className="thirdpage1">Right</button>
+        </div>
+        <div style={{float: 'left'}}>
+        <button onClick={() => nav("/SecondPage")}className="secondpage1">Left</button>
+        </div>
+
+        </div>
 
 
         <input type="text" value={Location} className="searchBar" onChange={EVENT=> setLocation(EVENT.target.value)} placeholder="Type a Location" onKeyPress={searchLocation} ></input>
@@ -123,6 +115,7 @@ useEffect( () => {
           {weather.current.wind_speed}
 
         </div> : <div></div>}
+        <img src={dot} className="dot" />
     
 {/*           
         {(!typeof weather.current!="undefined" && weather.length!=0)? (
