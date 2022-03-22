@@ -30,7 +30,7 @@ import { BrowserRouter as Router, Routes,Route} from "react-router-dom";
 
 function App() {
   // const [Location,setLocation]=useState('');
-  // const [weather,setWeather]=useState([]);
+  const [temp,setTemp]=useState({});
 
 
 
@@ -63,13 +63,18 @@ function App() {
   
 
   //     }}
-
-
-  return (
+  var varTemp= localStorage.getItem('temp');
 
 
 
-    <div className="background1">
+  return ( 
+
+
+
+    <div className={
+      (typeof varTemp != "null") 
+      ? ((varTemp>10)
+      ? 'background2' : 'background1') :'background3'}>
       <main>
       <div className="App">
       

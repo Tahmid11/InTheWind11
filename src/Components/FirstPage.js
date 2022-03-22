@@ -68,6 +68,8 @@ useEffect( () => {
       setWeather(Reply.data)
       // JSON Object ->String.
       localStorage.setItem('Weather', JSON.stringify(Reply.data));
+      localStorage.setItem('temp', Reply.data.current.temp);
+      window.location.reload(false);
       
 
 
@@ -79,7 +81,7 @@ useEffect( () => {
         })
   
 
-      }}
+      } }
 
 
 
@@ -92,11 +94,11 @@ useEffect( () => {
       <h1 id="LocationHead" className="LocationHeader">Welcome</h1>
       <img src={run} className="rungif" />
         <div className="navbutton">
-        <div style={{float: 'right'}}>
-        <button onClick={() => nav("/ThirdPage")} className="thirdpage1">Right</button>
-        </div>
         <div style={{float: 'left'}}>
-        <button onClick={() => nav("/SecondPage")}className="secondpage1">Left</button>
+        <button onClick={() => nav("/ThirdPage")} className="thirdpage1">Left</button>
+        </div>
+        <div style={{float: 'right'}}>
+        <button onClick={() => nav("/SecondPage")}className="secondpage1">Right</button>
         </div>
 
         </div>
