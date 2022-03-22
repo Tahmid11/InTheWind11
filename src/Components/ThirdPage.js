@@ -1,9 +1,43 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import { useNavigate } from "react-router-dom";
 import dot from './assets/page3.png';
 
+
 function ThirdPage(){
+    const weatherObject = JSON.parse(localStorage.getItem('Weather'));
     const nav=useNavigate();
+    const [items,setItems]=useState([]);
+    const new_a=[];
+
+    useEffect( () => {
+        if(weatherObject.daily[0].weather[0].description==="clear sky"){
+            console.log("This works")
+            new_a.push("water bottle")
+            new_a.push("Running Shoes")
+            new_a.push("Running Socks")
+            new_a.push("Sports Cap")
+        }else if(weatherObject.daily[0].weather[0].description==="few clouds"){
+            new_a.push("wear lighter clothes")
+            new_a.push("water bottle")
+            new_a.push("Running Shoes")
+            new_a.push("Running Socks")
+        }else if(weatherObject.daily[0].weather[0].description==="shower rain" ||weatherObject.daily[0].weather[0].description==="rain"){
+            new_a.push("waterproof jacket")
+            new_a.push("Shower after run ASAP")
+            new_a.push("Running Shoes")
+            new_a.push("Running Socks")
+            new_a.push("high visibility clothing")
+            new_a.push("headlamp")
+        }else{
+            new_a.push("waterproof jacket")
+            new_a.push("Shower after run ASAP")
+            new_a.push("Running Shoes")
+            new_a.push("Running Socks")
+            new_a.push("high visibility clothing")
+            new_a.push("wear gloves")
+        }
+        setItems(new_a);
+    }, []);
 
     return (<div>
         <h1>Third Page</h1>
@@ -16,7 +50,10 @@ function ThirdPage(){
         </div>
         
         <img src={dot} className="dot" />
-        <div>
+        <button onClick= {myFunction}>Click Me</button>
+
+        <div>{items}</div>
+        <div id="Injury_And_Prevention">
             <h1>Injury And Prevention </h1>
             
             <section id="Injury">
@@ -63,4 +100,12 @@ function ThirdPage(){
         
     )
 }
+function myFunction() {
+    var x = document.getElementById("Injury_And_Prevention");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
 export default ThirdPage
