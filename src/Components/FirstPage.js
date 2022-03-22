@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import run from './assets/transparent.gif';
 
 import {useNavigate} from "react-router-dom";
 
@@ -48,7 +49,6 @@ useEffect( () => {
         
 
           setLocation2(Response.data);
-          console.log(LocationAPI[0].name);
           localStorage.setItem('location', JSON.stringify(Response.data[0].name));
           document.getElementById("LocationHead").innerHTML = Response.data[0].name;
           
@@ -104,6 +104,7 @@ useEffect( () => {
 
     <div>
       <h1 id="LocationHead" className="LocationHeader">Welcome</h1>
+      <img src={run} className="rungif" />
         
         <button onClick={() => nav("/ThirdPage")}>Go To Third Page</button>
         <button onClick={() => nav("/SecondPage")}>Go To Second Page</button>
@@ -113,9 +114,11 @@ useEffect( () => {
 
 
         {weather.length !== 0 ? <div className="results">
-          
-          {weather.current.weather[0].description},
-          {weather.current.temp},
+        <div className="temp">
+        {Math.round(weather.current.temp)}</div>
+          <div className="Wdescription">
+          {weather.current.weather[0].description}
+          </div>
           {weather.current.clouds},
           {weather.current.wind_speed}
 
