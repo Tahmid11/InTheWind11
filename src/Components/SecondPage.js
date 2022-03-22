@@ -15,13 +15,14 @@ import dot from './assets/page2.png';
 
 //     )}
 function SecondPage(){
-    const navigate=useNavigate();
+    const nav=useNavigate();
 
     return (<div>
         <h1>Second Page</h1>
         <p>This is the second page.</p>
-        <button onClick={() => navigate("/ThirdPage")} className="thirdpage2">Go To Third Page</button>
-        <button onClick={() => navigate("/FirstPage")}className="firstpage2">Go To First Page</button>
+        <div style={{float: 'left'}}>
+        <button onClick={() => nav("/FirstPage")}className="firstpage3">Left</button>
+        </div>
         <img src={dot} className="dot" />
         </div>
         
