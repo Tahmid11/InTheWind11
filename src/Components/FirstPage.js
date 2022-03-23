@@ -30,7 +30,7 @@ useEffect( () => {
     // String->JSON Object
     const weatherObject = JSON.parse(localStorage.getItem('Weather'));
     document.getElementById("LocationHead").innerHTML = JSON.parse(localStorage.getItem('location'));
-    if (Math.round(weatherObject.current.temp)===15){
+    if (Math.round(weatherObject.current.temp)>15){
       arrayOfTop3Essentials.push("Tshirt")
       arrayOfTop3Essentials.push("Water Bottle")
       arrayOfTop3Essentials.push("Applys sunscreen")
