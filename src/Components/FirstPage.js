@@ -115,17 +115,25 @@ useEffect( () => {
         {/* This checks to see if the hooks are empty and if they aren't they will display key pieces of information. */}
         {weather.length !== 0 && top3essentials.length!==0? <div className="results">
         <div className="temp">
-        {Math.round(weather.current.temp)}</div>
+        {Math.round(weather.current.temp)}°</div>
           <div className="Wdescription">
           {weather.current.weather[0].description}
           </div>
-          {weather.current.clouds},
-          {weather.current.wind_speed}
-          <div className="Top3Essentials">
-            {top3essentials[0]},
-            {top3essentials[1]},
-            {top3essentials[2]}
+
+          <div className="main-cloud-rain">
+          <div className="main-rain">{weather.daily[0].pop*100}%</div>
+          <div className="main-cloud">{weather.current.clouds} km/h</div>
           </div>
+
+          <div className="Top3Essentials">
+            <h2>Top 3 Weather Essentials</h2>
+            <ul>
+              <li>{top3essentials[0]}</li>
+              <li>{top3essentials[1]}</li>
+              <li>{top3essentials[2]}</li>
+            </ul>
+          </div>
+
           <div className="button_container">
 
           <div className="dropdown">

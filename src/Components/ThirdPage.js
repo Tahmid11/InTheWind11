@@ -20,10 +20,14 @@ function ThirdPage(){
             new_a.push("Running Shoes")
             new_a.push("Running Socks")
             new_a.push("Sports Cap")
+            new_a.push("Wear Lighter Coloured Clothing")
+            new_a.push("Sports gels")
         }else if(weatherObject.daily[0].weather[0].description==="few clouds"){
             new_a.push("Wear Lighter Coloured Clothing")
             new_a.push("Running Shoes")
             new_a.push("Running Socks")
+            new_a.push("Wear a headband")
+            new_a.push("Sports gels")
         }else if(weatherObject.daily[0].weather[0].description==="shower rain" ||weatherObject.daily[0].weather[0].description==="rain"){
             new_a.push("Wear a Water Resistant Jacket")
             new_a.push("Running Shoes")
@@ -55,12 +59,14 @@ function ThirdPage(){
         
 
 
-        {new_a.length===3? <div className="reccomendations">
+        {new_a.length===5? <div className="reccomendations">
         <div id="items_for_clear_and_fewClouds">
             <p>{items[0]}</p>
             <p>{items[1]}</p>
             <p>{items[2]}</p>
-       
+            <p>{items[3]}</p>
+            <p>{items[4]}</p>
+            <p>{items[5]}</p>
           </div>
 
         </div> :
