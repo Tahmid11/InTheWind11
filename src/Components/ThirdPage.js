@@ -95,8 +95,6 @@ function ThirdPage(){
 
                 </h2>
             </section>
-            {/* Within the application */}
-            <a href={'https://www.nhs.uk/live-well/exercise/knee-pain-and-other-running-injuries/'}>For Furher Information.</a>
 
                 {/* Outside the application. */}
                 <a href="https://www.nhs.uk/live-well/exercise/knee-pain-and-other-running-injuries/" target="_blank" rel="noopener noreferrer">Click here</a>
