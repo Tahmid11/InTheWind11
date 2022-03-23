@@ -5,32 +5,46 @@ import {useNavigate} from "react-router-dom";
 import { useState } from "react";
 import axios from 'axios';
 
+// This page displays weather information related to the location the user types into the search bar.
+// The weather information displayed to the user is: The current temperature, chance of rain and wind speed.
+// The user will only see a blank page till after they type a location and press enter.
+ 
+
+
+
 
 function FirstPage(){
 
      const nav=useNavigate();
+
      const [Location,setLocation]=useState('');
      const [weather,setWeather]=useState([]);
+
      const [top3essentials,setTop3Essentials]=useState([]);
      let arrayOfTop3Essentials=[];
 
-  const url=`https://api.openweathermap.org/geo/1.0/direct?q=${Location},GB&limit=1&appid=d559bc18da1537d61bf16fb76b5e30d5`
 
-  //saving data inputs 
+    // First API call that is used to convert the location the user enters into lon and lat to make use in another API.
+    const firstUrl=`https://api.openweathermap.org/geo/1.0/direct?q=${Location},GB&limit=1&appid=d559bc18da1537d61bf16fb76b5e30d5`
 
 
+
+// This checks to see if the local storage object is empty, if it isn't then we push to an array certain pieces of clothing depending on the temperature.
+// Afer pushing to the array, we then use a hook to store the array and then use the current state(top3essentials) to display the array.
 useEffect( () => {
   if (localStorage.getItem('Weather') === null) {
-    // set the weather state
     console.log("It is empty");
 
   } 
   else{
     console.log("IT is not empty.")
-    // String->JSON Object
     const weatherObject = JSON.parse(localStorage.getItem('Weather'));
     document.getElementById("LocationHead").innerHTML = JSON.parse(localStorage.getItem('location'));
+<<<<<<< HEAD
     if (Math.round(weatherObject.current.temp)>15){
+=======
+    if (Math.round(weatherObject.current.temp)>=15){
+>>>>>>> de9c1ef56932e9c22a7c64def4244c15e4951f95
       arrayOfTop3Essentials.push("Tshirt")
       arrayOfTop3Essentials.push("Water Bottle")
       arrayOfTop3Essentials.push("Applys sunscreen")
@@ -42,28 +56,36 @@ useEffect( () => {
     }
     setWeather(weatherObject)
     setTop3Essentials(arrayOfTop3Essentials)
-
   }
 }, []);
+
+  // This function checks if the enter was pressed then:
+  // Stores the location the user entered to local storage to Chrome;
+  // Stores the latitude and longitude to be used in the second API call.
+  // Then we use the hook 'useState' to track specific data;
+  // Finally we store in local memory in Chrome every piece of data to do with the weather and the current temperature.
   const searchLocation=(EVENT) =>{
 
     if (EVENT.key==="Enter"){   
-      axios.get(url).then((Response)=>{ 
+      axios.get(firstUrl).then((Response)=>{ 
   
           localStorage.setItem('location', JSON.stringify(Response.data[0].name));
           document.getElementById("LocationHead").innerHTML = Response.data[0].name;
           
         
-        setLocation('')
-        let lat=(Response.data[0].lat)
-        let lon=(Response.data[0].lon)
+          setLocation('')
+          let lat=(Response.data[0].lat)
+          let lon=(Response.data[0].lon)
 
         
-      axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=alerts,minutely&appid=d559bc18da1537d61bf16fb76b5e30d5&units=metric`).then((Reply)=>{
-      setWeather(Reply.data)
-      // JSON Object ->String.
-      localStorage.setItem('Weather', JSON.stringify(Reply.data));
-      localStorage.setItem('temp', Reply.data.current.temp);
+        axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=alerts,minutely&appid=d559bc18da1537d61bf16fb76b5e30d5&units=metric`).then((Reply)=>{
+          setWeather(Reply.data)
+
+      
+          localStorage.setItem('Weather', JSON.stringify(Reply.data));
+          localStorage.setItem('temp', Reply.data.current.temp);
+
+      
 
       window.location.reload(false);
 
@@ -73,6 +95,8 @@ useEffect( () => {
   
 
       } }
+ 
+ 
 
     return (
 
@@ -89,11 +113,11 @@ useEffect( () => {
 
         </div>
 
-
+        {/* When the user hits enter when they type the location, they go to the function called 'searchLocation'. */}
         <input type="text" value={Location} className="searchBar" onChange={EVENT=> setLocation(EVENT.target.value)} placeholder="Type a Location" onKeyPress={searchLocation} ></input>
 
-
-        {weather.length !== 0 && top3essentials.length!==0 ? <div className="results">
+        {/* This checks to see if the hooks are empty and if they aren't they will display key pieces of information. */}
+        {weather.length !== 0 && top3essentials.length!==0? <div className="results">
         <div className="temp">
         {Math.round(weather.current.temp)}</div>
           <div className="Wdescription">
@@ -105,6 +129,30 @@ useEffect( () => {
             {top3essentials[0]},
             {top3essentials[1]},
             {top3essentials[2]}
+          </div>
+          <div className="dropdown">
+              <button className="dropbtn1">Dropdown1</button>
+             <div className="dropdown-content">
+                <button>Clouds</button>
+                <a href="#">Dew Point</a>
+                <a href="#">Relative Humidity</a>
+                </div>
+          </div>
+          <div className="dropdown">
+              <button className="dropbtn2">Dropdown2</button>
+             <div className="dropdown-content">
+                <a>Clouds</a>
+                <a>Dew Point</a>
+                <a>Relative Humidity</a>
+                </div>
+          </div>
+          <div className="dropdown">
+              <button className="dropbtn3">Dropdown</button>
+             <div className="dropdown-content">
+                <a href="#">Clouds</a>
+                <a href="#">Dew Point</a>
+                <a href="#">Relative Humidity</a>
+                </div>
           </div>
 
         </div> : <div></div>}
