@@ -169,18 +169,37 @@ main{
   height: 100px;
   padding-top: 0px;
 }
+
+
+
+
+/* For additional buttons */
+.button_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+}
+
 .dropdown{
-  display: inline-block;
+  display:inline-block;
 }
 
 select {
-  appearance: none;
+    appearance: none;
   background-color: #ffffff;
   border-radius: 25px;
   margin-left: 5px;
   margin-right: 5px;
-  height: 50px !important;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 70px !important;
+  width: 100px;
+
+  font-weight: 600;
   text-align: center;
   overflow: auto;
-  width: 90px;
+  word-wrap: normal !important;
+  white-space: normal;
+  vertical-align: top;
 }

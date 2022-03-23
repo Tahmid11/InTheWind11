@@ -126,47 +126,51 @@ useEffect( () => {
             {top3essentials[1]},
             {top3essentials[2]}
           </div>
-          <div className="dropdown">
-             <div className="dropdown-content">
-             <form>
-              <select id="myList">
-                <option>+</option>
-                <option>Cloud Cov: {weather.current.clouds}%</option>
-                <option>Dew Point: {weather.current.dew_point}</option>
-                <option>Relative Humidity: {weather.current.humidity}</option>
-                <option>Atomic Pressure: {weather.current.pressure}</option>
-              </select>
-            </form>
-            </div>
-          </div>
+          <div className="button_container">
 
           <div className="dropdown">
               <div className="dropdown-content">
-             <form>
-             <select id="myList">
-                <option>+</option>
-                <option>Cloud Cov: {weather.current.clouds}%</option>
-                <option>Dew Point: {weather.current.dew_point}</option>
-                <option>Relative Humidity: {weather.current.humidity}</option>
-                <option>Atomic Pressure: {weather.current.pressure}</option>
-              </select>
-            </form>
+                <form>
+                   <select id="myList">
+                    <option>+</option>
+                    <option>Cloud Coverage: {weather.current.clouds}%</option>
+                    <option>Dew Point: {weather.current.dew_point}°C</option>
+                    <option>Relative Humidity: {weather.current.humidity}%</option>
+                    <option>Atomic Pressure: {weather.current.pressure}mb</option>
+                    </select>
+                  </form>
+                </div>
             </div>
-          </div>
 
-          <div className="dropdown">
-          <div className="dropdown-content">
-             <form>
-             <select id="myList">
-                <option>+</option>
-                <option>Cloud Cov: {weather.current.clouds}%</option>
-                <option>Dew Point: {weather.current.dew_point}</option>
-                <option>Relative Humidity: {weather.current.humidity}</option>
-                <option>Atomic Pressure: {weather.current.pressure}</option>
-              </select>
-            </form>
+            <div className="dropdown">
+                <div className="dropdown-content">
+              <form>
+              <select id="myList">
+                  <option>+</option>
+                  <option>Cloud Coverage: {weather.current.clouds}%</option>
+                  <option>Dew Point: {weather.current.dew_point}°C</option>
+                  <option>Relative Humidity: {weather.current.humidity}%</option>
+                  <option>Atomic Pressure: {weather.current.pressure}mb</option>
+                </select>
+              </form>
+              </div>
             </div>
-          </div>
+
+            <div className="dropdown">
+            <div className="dropdown-content">
+              <form>
+              <select id="myList">
+                  <option>+</option>
+                  <option>Cloud Coverage: {weather.current.clouds}%</option>
+                  <option>Dew Point: {weather.current.dew_point}°C</option>
+                  <option>Relative Humidity: {weather.current.humidity}%</option>
+                  <option>Atomic Pressure: {weather.current.pressure}mb</option>
+                </select>
+              </form>
+              </div>
+            </div>
+
+            </div>
 
         </div> : <div></div>}
         <img src={dot} className="dot" />
