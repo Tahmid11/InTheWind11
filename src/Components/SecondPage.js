@@ -2,6 +2,17 @@ import React from "react"
 import {useNavigate} from "react-router-dom";
 import dot from './assets/page2.png';
 
+// This page provides weather information across a 6 day period as well the time for sunrise and sunset.
+// The weather information it provides is: 
+
+
+
+
+
+
+
+
+
 function SecondPage(){
     const nav=useNavigate();
     var dateObj = new Date()
