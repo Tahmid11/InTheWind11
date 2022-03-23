@@ -40,11 +40,7 @@ useEffect( () => {
     console.log("IT is not empty.")
     const weatherObject = JSON.parse(localStorage.getItem('Weather'));
     document.getElementById("LocationHead").innerHTML = JSON.parse(localStorage.getItem('location'));
-<<<<<<< HEAD
-    if (Math.round(weatherObject.current.temp)>15){
-=======
     if (Math.round(weatherObject.current.temp)>=15){
->>>>>>> de9c1ef56932e9c22a7c64def4244c15e4951f95
       arrayOfTop3Essentials.push("Tshirt")
       arrayOfTop3Essentials.push("Water Bottle")
       arrayOfTop3Essentials.push("Applys sunscreen")
@@ -131,28 +127,45 @@ useEffect( () => {
             {top3essentials[2]}
           </div>
           <div className="dropdown">
-              <button className="dropbtn1">Dropdown1</button>
              <div className="dropdown-content">
-                <button>Clouds</button>
-                <a href="#">Dew Point</a>
-                <a href="#">Relative Humidity</a>
-                </div>
+             <form>
+              <select id="myList">
+                <option>+</option>
+                <option>Cloud Cov: {weather.current.clouds}%</option>
+                <option>Dew Point: {weather.current.dew_point}</option>
+                <option>Relative Humidity: {weather.current.humidity}</option>
+                <option>Atomic Pressure: {weather.current.pressure}</option>
+              </select>
+            </form>
+            </div>
           </div>
+
           <div className="dropdown">
-              <button className="dropbtn2">Dropdown2</button>
-             <div className="dropdown-content">
-                <a>Clouds</a>
-                <a>Dew Point</a>
-                <a>Relative Humidity</a>
-                </div>
+              <div className="dropdown-content">
+             <form>
+             <select id="myList">
+                <option>+</option>
+                <option>Cloud Cov: {weather.current.clouds}%</option>
+                <option>Dew Point: {weather.current.dew_point}</option>
+                <option>Relative Humidity: {weather.current.humidity}</option>
+                <option>Atomic Pressure: {weather.current.pressure}</option>
+              </select>
+            </form>
+            </div>
           </div>
+
           <div className="dropdown">
-              <button className="dropbtn3">Dropdown</button>
-             <div className="dropdown-content">
-                <a href="#">Clouds</a>
-                <a href="#">Dew Point</a>
-                <a href="#">Relative Humidity</a>
-                </div>
+          <div className="dropdown-content">
+             <form>
+             <select id="myList">
+                <option>+</option>
+                <option>Cloud Cov: {weather.current.clouds}%</option>
+                <option>Dew Point: {weather.current.dew_point}</option>
+                <option>Relative Humidity: {weather.current.humidity}</option>
+                <option>Atomic Pressure: {weather.current.pressure}</option>
+              </select>
+            </form>
+            </div>
           </div>
 
         </div> : <div></div>}

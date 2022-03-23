@@ -39,7 +39,7 @@ body {
   background-position: bottom;
 
 }
-html, body {margin: 0; height: 100%; overflow: hidden}
+/* html, body {margin: 0; height: 100%; overflow: hidden} */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -134,12 +134,53 @@ main{
   background-color: #04AA6D;
   color: white;
 }
-#Injury_And_Prevention,#Links_to_workout_plan{
+
+#Injury_And_Prevention,#Links_to_workout_plan,#items_for_clear_and_fewClouds,#items_for_rain_showerRain_andEverythingElse{
   width: 100%;
   padding: 50px 0;
   text-align: center;
-  background-color: lightblue;
+  background-color: white;
   margin-top: 20px;
   border-radius: 25px;
+  overflow: scroll;
+  padding-top: 0px;
 
+}
+
+#items_for_clear_and_fewClouds{
+  font-size: 15px;
+  height: 100px;
+
+  
+}
+#items_for_rain_showerRain_andEverythingElse{
+
+  height: 100px;
+  font-size: 15px;
+}
+#Injury_And_Prevention{
+  height: 200px;
+  font-size: 15px;
+}
+
+
+#Links_to_workout_plan{
+  overflow: scroll;
+  height: 100px;
+  padding-top: 0px;
+}
+.dropdown{
+  display: inline-block;
+}
+
+select {
+  appearance: none;
+  background-color: #ffffff;
+  border-radius: 25px;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 50px !important;
+  text-align: center;
+  overflow: auto;
+  width: 90px;
 }
