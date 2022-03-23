@@ -134,3 +134,12 @@ main{
   background-color: #04AA6D;
   color: white;
 }
+#Injury_And_Prevention,#Links_to_workout_plan{
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: lightblue;
+  margin-top: 20px;
+  border-radius: 25px;
+
+}
