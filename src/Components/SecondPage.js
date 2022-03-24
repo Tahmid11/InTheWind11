@@ -93,31 +93,31 @@ function SecondPage(){
                     <br></br>
                     <img src={rain}/>
                     <br></br>
-                    {weatherObject.hourly[0].pop*100}%
+                    {Math.round(weatherObject.hourly[0].pop*100)}%
                 </td>
                 <td>
                     <br></br>
                     <img src={rain}/>
                     <br></br>
-                    {weatherObject.hourly[1].pop*100}%
+                    {Math.round(weatherObject.hourly[1].pop*100)}%
                 </td>
                 <td>
                     <br></br>
                     <img src={rain}/>
                     <br></br>
-                    {weatherObject.hourly[2].pop*100}%
+                    {Math.round(weatherObject.hourly[2].pop*100)}%
                 </td>
                 <td>
                     <br></br>
                     <img src={rain}/>
                     <br></br>
-                    {weatherObject.hourly[3].pop*100}%
+                    {Math.round(weatherObject.hourly[3].pop*100)}%
                 </td>
                 <td>
                     <br></br>
                     <img src={rain}/>
                     <br></br>
-                    {weatherObject.hourly[4].pop*100}%
+                    {Math.round(weatherObject.hourly[4].pop*100)}%
                 </td>
             </tr>
             <tr>
@@ -171,7 +171,7 @@ function SecondPage(){
                         <img className="icon" src={icon_1}></img>
                     </td>
                     <td>{Math.round(weatherObject.daily[0].temp.day)}°</td>
-                    <td><img src={rain}/> {weatherObject.daily[0].pop*100}%</td>
+                    <td><img src={rain}/> {Math.round(weatherObject.daily[0].pop*100)}%</td>
                     <td>{Math.round(weatherObject.daily[0].temp.max)}°</td>
                     <td>{Math.round(weatherObject.daily[0].temp.min)}°</td>
                 </tr>
@@ -181,7 +181,7 @@ function SecondPage(){
                         <img className="icon" src={icon_2}></img>
                     </td>
                     <td>{Math.round(weatherObject.daily[1].temp.day)}°</td>
-                    <td><img src={rain}/> {weatherObject.daily[1].pop*100}%</td>
+                    <td><img src={rain}/> {Math.round(weatherObject.daily[1].pop*100)}%</td>
                     <td>{Math.round(weatherObject.daily[1].temp.max)}°</td>
                     <td>{Math.round(weatherObject.daily[1].temp.min)}°</td>
                 </tr>
@@ -191,7 +191,7 @@ function SecondPage(){
                         <img className="icon" src={icon_3}></img>
                     </td>
                     <td>{Math.round(weatherObject.daily[2].temp.day)}°</td>
-                    <td><img src={rain}/> {weatherObject.daily[2].pop*100}%</td>
+                    <td><img src={rain}/> {Math.round(weatherObject.daily[2].pop*100)}%</td>
                     <td>{Math.round(weatherObject.daily[2].temp.max)}°</td>
                     <td>{Math.round(weatherObject.daily[2].temp.min)}°</td>
                 </tr>
@@ -201,7 +201,7 @@ function SecondPage(){
                         <img className="icon" src={icon_4}></img>
                     </td>
                     <td>{Math.round(weatherObject.daily[3].temp.day)}°</td>
-                    <td><img src={rain}/> {weatherObject.daily[3].pop*100}%</td>
+                    <td><img src={rain}/> {Math.round(weatherObject.daily[3].pop*100)}%</td>
                     <td>{Math.round(weatherObject.daily[3].temp.max)}°</td>
                     <td>{Math.round(weatherObject.daily[3].temp.min)}°</td>
                 </tr>
@@ -211,7 +211,7 @@ function SecondPage(){
                         <img className="icon" src={icon_5}></img>
                     </td>
                     <td>{Math.round(weatherObject.daily[4].temp.day)}°</td>
-                    <td><img src={rain}/> {weatherObject.daily[4].pop*100}%</td>
+                    <td><img src={rain}/> {Math.round(weatherObject.daily[4].pop*100)}%</td>
                     <td>{Math.round(weatherObject.daily[4].temp.max)}°</td>
                     <td>{Math.round(weatherObject.daily[4].temp.min)}°</td>
                 </tr>
@@ -221,7 +221,7 @@ function SecondPage(){
                         <img className="icon" src={icon_6}></img>
                     </td>
                     <td>{Math.round(weatherObject.daily[5].temp.day)}°</td>
-                    <td><img src={rain}/> {weatherObject.daily[5].pop*100}%</td>
+                    <td><img src={rain}/> {Math.round(weatherObject.daily[5].pop*100)}%</td>
                     <td>{Math.round(weatherObject.daily[5].temp.max)}°</td>
                     <td>{Math.round(weatherObject.daily[5].temp.min)}°</td>
                 </tr>
@@ -231,7 +231,7 @@ function SecondPage(){
                         <img className="icon" src={icon_7}></img>
                     </td>
                     <td>{Math.round(weatherObject.daily[6].temp.day)}°</td>
-                    <td><img src={rain}/> {weatherObject.daily[6].pop*100}%</td>
+                    <td><img src={rain}/> {Math.round(weatherObject.daily[6].pop*100)}%</td>
                     <td>{Math.round(weatherObject.daily[6].temp.max)}°</td>
                     <td>{Math.round(weatherObject.daily[6].temp.min)}°</td>
                 </tr>
