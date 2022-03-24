@@ -44,7 +44,7 @@ useEffect( () => {
     if (Math.round(weatherObject.current.temp)>=15){
       arrayOfTop3Essentials.push("Tshirt")
       arrayOfTop3Essentials.push("Water Bottle")
-      arrayOfTop3Essentials.push("Applys sunscreen")
+      arrayOfTop3Essentials.push("Apply sunscreen")
     }
     else{
       arrayOfTop3Essentials.push("Trousers/Tights")

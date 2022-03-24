@@ -112,8 +112,8 @@ function ThirdPage(){
         
             <h3>Workout Plans for 5K and 10K </h3>
             <ul>
-                <li><h4><a href="https://www.nhs.uk/live-well/exercise/couch-to-5k-week-by-week/" target="_blank" rel="noopener noreferrer">Couch to 5K</a></h4></li>
-                <li><h4><a href="https://www.verywellfit.com/beginner-runners-10k-training-schedule-2911611" target="_blank" rel="noopener noreferrer">Link to 10K Plan</a></h4></li>
+                <li><h4><a href="https://www.nhs.uk/live-well/exercise/couch-to-5k-week-by-week/" target="_blank" rel="noopener noreferrer">Couch to 5K Plan</a></h4></li>
+                <li><h4><a href="https://www.verywellfit.com/beginner-runners-10k-training-schedule-2911611" target="_blank" rel="noopener noreferrer">10K Training Plan</a></h4></li>
             </ul>
 
         </div>

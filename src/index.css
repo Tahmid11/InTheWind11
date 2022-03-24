@@ -137,8 +137,10 @@ main{
   display:inline-block;
 }
 
+
 select {
   appearance: none;
+  border: none;
   background-color: #ffffff;
   border-radius: 25px;
   margin-left: 5px;
@@ -230,87 +232,6 @@ ul {
   color: white;
 }
 
-
-
-/* THIRD PAGE */
-
-#Injury_And_Prevention,#Links_to_workout_plan,#items_for_clear_and_fewClouds,#items_for_rain_showerRain_andEverythingElse,#Purchasing_Items{
-  width: 300px;
-  border: 15px solid green;
-  padding: 15px;
-  margin: 20px;
-  border-radius: 25px;
-  overflow: scroll;
-  background-color: transparent;
-  border: 1px solid white;
-  color: white;
-
-}
-
-#items_for_clear_and_fewClouds{
-  
-  font-size: 25px;
-  height: 160px;
-  text-align: center;
-}
-#items_for_rain_showerRain_andEverythingElse{
-  height: 160px;
-  font-size: 15px;
-  text-align: center;
-}
-#Injury_And_Prevention{
-  position: relative;
-  height: 200px;
-  font-size: 14px;
-  text-align: center;
-}
-
-/* Workout Plan CSS. */
-#Links_to_workout_plan{
-  text-decoration: underline;
-  position: relative;
-  justify-content: center;
-  justify-items: center;
-  margin: 0 auto;
-  text-align: center;
-  height: 120px;
-  width: 300px;
-  font-size: 15px;
-}
-#Links_to_workout_plan li{
-  list-style: none;
-}
-#Links_to_workout_plan a{
-  text-decoration: none;
-}
-
-/* Purchasing Items CSS. */
-#Purchasing_Items{
-  text-align: center;
-  overflow: scroll;
-  height: 90px;
-  top: 0;
-}
-#Purchasing_Items h3{
-  text-decoration: underline;
-}
-#listOfItems{
-  
-  list-style: none;
-  text-align: center;
-  
-}
-#listOfItems a{
-  text-decoration: none;
-}
-
-a:link {
-  color: white;
-}
-a:visited {
-  color: white;
-}
-
 #week {
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
@@ -381,4 +302,87 @@ a:visited {
   position: absolute;
   top: 115px;
   left: 130px;
+}
+
+
+
+/* THIRD PAGE */
+
+/* All boxes. */
+#Injury_And_Prevention,#Links_to_workout_plan,#items_for_clear_and_fewClouds,#items_for_rain_showerRain_andEverythingElse,#Purchasing_Items{
+  width: 300px;
+  border: 15px solid green;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 25px;
+  overflow: scroll;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+
+}
+/* Reccomended Items CSS depending on the forecast. */
+#items_for_clear_and_fewClouds{
+  
+  font-size: 25px;
+  height: 160px;
+  text-align: center;
+}
+#items_for_rain_showerRain_andEverythingElse{
+  height: 160px;
+  font-size: 15px;
+  text-align: center;
+}
+
+/* Injury And Prevention CSS */
+#Injury_And_Prevention{
+  position: relative;
+  height: 200px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Workout Plan CSS. */
+#Links_to_workout_plan{
+  text-decoration: underline;
+  position: relative;
+  justify-content: center;
+  justify-items: center;
+  margin: 0 auto;
+  text-align: center;
+  height: 120px;
+  width: 300px;
+  font-size: 15px;
+}
+#Links_to_workout_plan li{
+  list-style: none;
+}
+
+
+/* Purchasing Items CSS. */
+#Purchasing_Items{
+  text-align: center;
+  overflow: scroll;
+  height: 90px;
+  top: 0;
+}
+#Purchasing_Items h3{
+  text-decoration: underline;
+}
+#listOfItems{
+  
+  list-style: none;
+  text-align: center;
+  
+}
+#listOfItems a{
+  text-decoration: underline;
+}
+
+/*  Colouring the link*/
+a:link {
+  color: rgba(255, 250, 250, 0.829);
+}
+a:visited {
+  color: rgba(255, 250, 250, 0.829);
 }

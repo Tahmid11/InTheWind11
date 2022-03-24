@@ -8,9 +8,10 @@ function SecondPage(){
     const nav=useNavigate();
     var dateObj = new Date()
     var date_s_r = new Date(weatherObject.current.sunrise * 1000);
-    const t_sunrise = date_s_r.getHours() + ':' + date_s_r.getMinutes();
+    const t_sunrise = date_s_r.getHours() + ':' + randomS(date_s_r.getMinutes());
+    
     var date_s_s = new Date(weatherObject.current.sunset * 1000);
-    const t_sunset = date_s_s.getHours() + ':' + date_s_s.getMinutes();
+    const t_sunset = date_s_s.getHours() + ':' + randomS(date_s_s.getMinutes());
     var hour_1 = new Date(weatherObject.hourly[0].dt * 1000);
     hour_1=hour_1.getHours();
     var hour_2 = new Date(weatherObject.hourly[1].dt * 1000);
@@ -247,3 +248,11 @@ function SecondPage(){
     )
     }
 export default SecondPage;
+
+function randomS(number){
+    if (number<=10){
+        number="0"+number
+
+    }
+    return number
+}
