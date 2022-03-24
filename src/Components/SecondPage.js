@@ -250,7 +250,7 @@ function SecondPage(){
 export default SecondPage;
 
 function randomS(number){
-    if (number<=10){
+    if (number<10){
         number="0"+number
 
     }

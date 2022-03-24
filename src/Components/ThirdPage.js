@@ -54,7 +54,7 @@ function ThirdPage(){
 
         {new_a.length===5? <div className="reccomendations">
         <div id="items_for_clear_and_fewClouds">
-            <h3>Recomended Clothing &#38; Items</h3>
+            <h3>Recommended Clothing &#38; Items</h3>
             <p>{items[0]}</p>
             <p>{items[1]}</p>
             <p>{items[2]}</p>
@@ -65,7 +65,7 @@ function ThirdPage(){
 
         </div> :
          <div id="items_for_rain_showerRain_andEverythingElse">
-             <h3><u>Recomended Clothing &#38; Items</u></h3>
+             <h3><u>Recommended Clothing &#38; Items</u></h3>
              <p>{items[0]}</p>
              <p>{items[1]}</p>
              <p>{items[2]}</p>
@@ -85,7 +85,6 @@ function ThirdPage(){
                     <h4>Knee Pain:</h4>
                     <p>
                         Dull pain which is around the front, behind or around the knee/kneecap.
-                        <link></link>
                     </p>
                     <h4>Achiles Pain:</h4>
                     <p>
@@ -141,13 +140,6 @@ function ThirdPage(){
         
     )
 }
-// function myFunction() {
-//     var x = document.getElementById("Injury_And_Prevention");
-//     if (x.style.display === "none") {
-//       x.style.display = "block";
-//     } else {
-//       x.style.display = "none";
-//     }
-//   }
+
 
 export default ThirdPage

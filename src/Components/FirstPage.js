@@ -122,7 +122,7 @@ useEffect( () => {
           <div className="main-cloud">
             <img src={wind}/>
             <br></br>
-            {weather.current.clouds} km/h</div>
+            {weather.current.wind_speed} km/h</div>
           </div>
 
           <div className="Top3Essentials">
