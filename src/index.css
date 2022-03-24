@@ -103,12 +103,25 @@ main{
   right: -40px;
 }
 
-.dot{
-  position: fixed;
-  width: 20%;
-  height: auto;
-  left: 40%;
-  top: 83vh;
+
+.button_going_to_p{
+  position: relative;
+  border-radius: 50%;
+  font-size: small;
+}
+.button_on_p{
+  position: relative;
+  border-radius: 50%;
+  font-size: small;
+  background-color: grey;
+}
+.button_poss{
+  position: absolute;
+  top: 86vh;
+  left: 44%;
+  justify-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 /* For additional buttons */
@@ -166,11 +179,13 @@ select {
 }
 
 .main-cloud{
+  top: 192px;
   left: 5%;
   position: absolute;
 }
 
 .main-rain{
+  top: 192px;
   right: 5%;
   position: absolute;
 }
@@ -220,46 +235,58 @@ ul {
 /* THIRD PAGE */
 
 #Injury_And_Prevention,#Links_to_workout_plan,#items_for_clear_and_fewClouds,#items_for_rain_showerRain_andEverythingElse{
-  padding: 50px 0;
-  text-align: center;
-  background-color: transparent;
-  margin-top: 20px;
+  width: 300px;
+  border: 15px solid green;
+  padding: 15px;
+  margin: 20px;
   border-radius: 25px;
   overflow: scroll;
-  padding-top: 0px;
+  background-color: transparent;
   border: 1px solid white;
   color: white;
 
 }
 
 #items_for_clear_and_fewClouds{
-  font-size: 25px;
-  height: 100px;
-
   
+  font-size: 25px;
+  height: 160px;
+  text-align: center;
 }
 #items_for_rain_showerRain_andEverythingElse{
-
-  height: 100px;
+  height: 160px;
   font-size: 15px;
+  text-align: center;
 }
 #Injury_And_Prevention{
+  position: relative;
   height: 200px;
-  font-size: 15px;
+  font-size: 14px;
+  text-align: center;
 }
 
 #Links_to_workout_plan{
-  position: absolute;
-  top: 480px;
-  right: 95px;
-  width: 210px;
+  position: relative;
+  justify-content: center;
+  justify-items: center;
+  margin: 0 auto;
+  text-align: center;
+  height: 120px;
+  width: 300px;
   font-size: 15px;
 }
+a:link {
+  color: white;
+}
+a:visited {
+  color: white;
+}
+
 #week {
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
-  top: 50px;
-  left: 10%;
+  top: 90px;
+  left: 17px;
   border-collapse: separate;
   width: 100%;
   border: 1px solid white;
@@ -267,13 +294,15 @@ ul {
   border-radius:6px;
   background-color: transparent;
 }
-#week td, #week th {
+#week th{
+  font-size: 11px;
+  text-align: left;
   padding: 6px;
 }
 #hourly_w {
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
-  top: 50px;
+  top: 90px;
   border-collapse: separate;
   width: 100%;
   border: 1px solid white;
@@ -299,23 +328,28 @@ ul {
 }
 .sunset{
   position: absolute;
-  left:85%;
+  left:82%;
+  bottom: 760px;
   color: white;
 }
 .sunrise{
   position: absolute;
   left:5%;
+  bottom: 760px;
   color: white;
-}
-.button_l{
-  position: absolute;
-  top: 5px;
-  border-radius: 50%;
-  font-size: small;
-}
-.button_l:hover{
-  background-color: gray;
 }
 .page3_title{
+  position: relative;
+  text-align: center;
+  padding-top: 23px;
   color: white;
+}
+.page3_title h1{
+  font-size: 50px;
+  font-weight: bolder;
+}
+.icon_c{
+  position: absolute;
+  top: 115px;
+  left: 130px;
 }

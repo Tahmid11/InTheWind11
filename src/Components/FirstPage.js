@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import run from './assets/transparent.gif';
-import dot from './assets/page1.jpg.png';
 import {useNavigate} from "react-router-dom";
 import { useState } from "react";
 import axios from 'axios';
+import rain from './assets/raindrop.png';
+import wind from './assets/wind.png';
 
 // This page displays weather information related to the location the user types into the search bar.
 // The weather information displayed to the user is: The current temperature, chance of rain and wind speed.
@@ -99,15 +100,6 @@ useEffect( () => {
     <div>
       <h1 id="LocationHead" className="LocationHeader">Welcome</h1>
       <img src={run} className="rungif" />
-        <div className="navbutton">
-        <div style={{float: 'left'}}>
-        <button onClick={() => nav("/ThirdPage")} className="thirdpage1">Left</button>
-        </div>
-        <div style={{float: 'right'}}>
-        <button onClick={() => nav("/SecondPage")}className="secondpage1">Right</button>
-        </div>
-
-        </div>
 
         {/* When the user hits enter when they type the location, they go to the function called 'searchLocation'. */}
         <input type="text" value={Location} className="searchBar" onChange={EVENT=> setLocation(EVENT.target.value)} placeholder="Type a Location" onKeyPress={searchLocation} ></input>
@@ -117,12 +109,20 @@ useEffect( () => {
         <div className="temp">
         {Math.round(weather.current.temp)}°</div>
           <div className="Wdescription">
+            <img className="icon_c" src={`http://openweathermap.org/img/wn/${weather.current.weather[0].icon}.png`}></img>
           {weather.current.weather[0].description}
           </div>
 
           <div className="main-cloud-rain">
-          <div className="main-rain">{weather.daily[0].pop*100}%</div>
-          <div className="main-cloud">{weather.current.clouds} km/h</div>
+          <div className="main-rain">
+            <img src={rain}/>
+            <br></br>
+            {weather.daily[0].pop*100}%
+          </div>
+          <div className="main-cloud">
+            <img src={wind}/>
+            <br></br>
+            {weather.current.clouds} km/h</div>
           </div>
 
           <div className="Top3Essentials">
@@ -179,14 +179,14 @@ useEffect( () => {
             </div>
 
             </div>
+            <div className="button_poss">
+              <button  onClick={() => nav("/ThirdPage")}className="button_going_to_p">&nbsp;&nbsp;&nbsp;</button>
+              <button  onClick={() => nav("/FirstPage")}className="button_on_p">&nbsp;&nbsp;&nbsp;</button>
+              <button  onClick={() => nav("/SecondPage")}className="button_going_to_p">&nbsp;&nbsp;&nbsp;</button>
+            </div>
 
         </div> : <div></div>}
-        <img src={dot} className="dot" />
-
-
     </div>
-
-      
     )
 }
 export default FirstPage;

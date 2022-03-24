@@ -1,6 +1,5 @@
 import React from "react"
 import {useNavigate} from "react-router-dom";
-import dot from './assets/page2.png';
 import rain from './assets/raindrop.png';
 import wind from './assets/wind.png';
 
@@ -46,12 +45,9 @@ function SecondPage(){
     var icon_5=`http://openweathermap.org/img/wn/${weatherObject.daily[4].weather[0].icon}.png`
     var icon_6=`http://openweathermap.org/img/wn/${weatherObject.daily[5].weather[0].icon}.png`
     var icon_7=`http://openweathermap.org/img/wn/${weatherObject.daily[6].weather[0].icon}.png`
-
     localStorage.getItem('Weather')
+
     return (<div>
-        <div>
-            <button  title="where are you going" onClick={() => nav("/FirstPage")}className="button_l">&nbsp;&nbsp;&nbsp;&nbsp;</button>
-        </div>
         <div className="sunrise">
             <h3>Sunrise</h3>
             {t_sunrise}
@@ -162,6 +158,14 @@ function SecondPage(){
         <br></br>
         <table id="week">
                 <tr>
+                    <th>Day</th>
+                    <th></th>
+                    <th>Temperature</th>
+                    <th>% Rain</th>
+                    <th>Max</th>
+                    <th>Min</th>
+                </tr>
+                <tr>
                     <td>Today</td>
                     <td>
                         <img className="icon" src={icon_1}></img>
@@ -231,13 +235,15 @@ function SecondPage(){
                     <td>{Math.round(weatherObject.daily[6].temp.max)}°</td>
                     <td>{Math.round(weatherObject.daily[6].temp.min)}°</td>
                 </tr>
-            
         </table>
         </div>
         </div>
-        <img src={dot} className="dot" />
+        <div className="button_poss">
+            <button  onClick={() => nav("/ThirdPage")}className="button_going_to_p">&nbsp;&nbsp;&nbsp;</button>
+            <button  onClick={() => nav("/FirstPage")}className="button_going_to_p">&nbsp;&nbsp;&nbsp;</button>
+            <button  onClick={() => nav("/SecondPage")}className="button_on_p">&nbsp;&nbsp;&nbsp;</button>
         </div>
-        
+        </div>
     )
     }
 export default SecondPage;
