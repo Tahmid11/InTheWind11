@@ -117,7 +117,7 @@ main{
 }
 .button_poss{
   position: absolute;
-  top: 86vh;
+  top: 97vh;
   left: 44%;
   justify-items: center;
   justify-content: center;
@@ -234,7 +234,7 @@ ul {
 
 /* THIRD PAGE */
 
-#Injury_And_Prevention,#Links_to_workout_plan,#items_for_clear_and_fewClouds,#items_for_rain_showerRain_andEverythingElse{
+#Injury_And_Prevention,#Links_to_workout_plan,#items_for_clear_and_fewClouds,#items_for_rain_showerRain_andEverythingElse,#Purchasing_Items{
   width: 300px;
   border: 15px solid green;
   padding: 15px;
@@ -265,7 +265,9 @@ ul {
   text-align: center;
 }
 
+/* Workout Plan CSS. */
 #Links_to_workout_plan{
+  text-decoration: underline;
   position: relative;
   justify-content: center;
   justify-items: center;
@@ -275,6 +277,33 @@ ul {
   width: 300px;
   font-size: 15px;
 }
+#Links_to_workout_plan li{
+  list-style: none;
+}
+#Links_to_workout_plan a{
+  text-decoration: none;
+}
+
+/* Purchasing Items CSS. */
+#Purchasing_Items{
+  text-align: center;
+  overflow: scroll;
+  height: 90px;
+  top: 0;
+}
+#Purchasing_Items h3{
+  text-decoration: underline;
+}
+#listOfItems{
+  
+  list-style: none;
+  text-align: center;
+  
+}
+#listOfItems a{
+  text-decoration: none;
+}
+
 a:link {
   color: white;
 }

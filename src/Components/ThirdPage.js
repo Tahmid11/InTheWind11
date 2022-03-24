@@ -35,7 +35,7 @@ function ThirdPage(){
             new_a.push("Headlamp")
             new_a.push("Apply Anti Chafe Balm To Prevent Chafing.")
         }else{
-            new_a.push(" Wear A Wind Resistant Jacket")
+            new_a.push("Wear A Wind Resistant Jacket")
             new_a.push("Running Shoes")
             new_a.push("Running Socks")
             new_a.push("A Sports Cap")
@@ -51,10 +51,6 @@ function ThirdPage(){
         <div className="page3_title">
             <h1>Essentials</h1>
         </div>
-
-        {/* <div style={{float: 'right'}}>
-        <button onClick={() => nav("/FirstPage")}className="secondpage1">Right</button>
-        </div> */}
 
         {new_a.length===5? <div className="reccomendations">
         <div id="items_for_clear_and_fewClouds">
@@ -78,7 +74,6 @@ function ThirdPage(){
              <p>{items[5]}</p>
              <p>{items[6]}</p>
         </div>}
-        {/* <button onClick={myFunction}> Click here for injury.</button> */}
         <div id="Injury_And_Prevention">
         <h3><u>Injury &#38; Prevention </u></h3>
             
@@ -121,6 +116,20 @@ function ThirdPage(){
                 <li><h4><a href="https://www.verywellfit.com/beginner-runners-10k-training-schedule-2911611" target="_blank" rel="noopener noreferrer">Link to 10K Plan</a></h4></li>
             </ul>
 
+        </div>
+        
+
+        <div id="Purchasing_Items">
+        <h3>Items To Purchase</h3>
+            <ul>
+                <div id="listOfItems">
+                <li><h4><a href="https://www.sportsdirect.com/running/running-shoes/mens-running-shoes" target="_blank" rel="noopener noreferrer">Running Shoes</a></h4></li>
+                <li><h4><a href="https://www.runnersneed.com/c/clothing.html" target="_blank" rel="noopener noreferrer">Running Gear</a></h4></li>
+                <li><h4><a href="https://www.amazon.co.uk/Black-Diamond-HEADLAMP-Extremely-Rechargeable/dp/B081BBW9QQ?th=1&psc=1" target="_blank" rel="noopener noreferrer">Running Headlamp</a></h4></li>
+                <li><h4><a href="https://www.hollandandbarrett.com/shop/sports-nutrition/pre-workout-energy/energy-gels/"target="_blank" rel="noopener noreferrer">Sports Gel</a> </h4></li>
+                <li><h4><a href="https://www.runnersneed.com/c/accessories/hats.html" target="_blank" rel="noopener noreferrer">Running Cap</a></h4></li>
+                </div>
+            </ul>
         </div>
         <div className="button_poss">
             <button  onClick={() => nav("/ThirdPage")}className="button_on_p">&nbsp;&nbsp;&nbsp;</button>
