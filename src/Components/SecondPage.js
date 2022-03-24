@@ -2,32 +2,42 @@ import React from "react"
 import {useNavigate} from "react-router-dom";
 import dot from './assets/page2.png';
 import rain from './assets/raindrop.png';
+import wind from './assets/wind.png';
 
 function SecondPage(){
     const weatherObject = JSON.parse(localStorage.getItem('Weather'));
     const nav=useNavigate();
     var dateObj = new Date()
-    let hour_1 = dateObj.getHours();
-    let hour_2 = dateObj.getHours()+1;
-    let hour_3 = dateObj.getHours()+2;
-    let hour_4 = dateObj.getHours()+3;
-    let hour_5 = dateObj.getHours()+4;
+    var date_s_r = new Date(weatherObject.current.sunrise * 1000);
+    const t_sunrise = date_s_r.getHours() + ':' + date_s_r.getMinutes();
+    var date_s_s = new Date(weatherObject.current.sunset * 1000);
+    const t_sunset = date_s_s.getHours() + ':' + date_s_s.getMinutes();
+    var hour_1 = new Date(weatherObject.hourly[0].dt * 1000);
+    hour_1=hour_1.getHours();
+    var hour_2 = new Date(weatherObject.hourly[1].dt * 1000);
+    hour_2=hour_2.getHours();
+    var hour_3 = new Date(weatherObject.hourly[2].dt * 1000);
+    hour_3=hour_3.getHours();
+    var hour_4 = new Date(weatherObject.hourly[3].dt * 1000);
+    hour_4=hour_4.getHours();
+    var hour_5 = new Date(weatherObject.hourly[4].dt * 1000);
+    hour_5=hour_5.getHours();
     var h_icon_1=`http://openweathermap.org/img/wn/${weatherObject.hourly[0].weather[0].icon}.png`
     var h_icon_2=`http://openweathermap.org/img/wn/${weatherObject.hourly[1].weather[0].icon}.png`
     var h_icon_3=`http://openweathermap.org/img/wn/${weatherObject.hourly[2].weather[0].icon}.png`
     var h_icon_4=`http://openweathermap.org/img/wn/${weatherObject.hourly[3].weather[0].icon}.png`
     var h_icon_5=`http://openweathermap.org/img/wn/${weatherObject.hourly[4].weather[0].icon}.png`
-    dateObj.setDate(dateObj.getDate() + 2);
+    dateObj.setDate(dateObj.getDate() + 1);
     var weekday_2 = dateObj.toLocaleString("default", { weekday: "long" })
-    dateObj.setDate(dateObj.getDate() + 3);
+    dateObj.setDate(dateObj.getDate() + 1);
     var weekday_3 = dateObj.toLocaleString("default", { weekday: "long" })
-    dateObj.setDate(dateObj.getDate() + 3);
+    dateObj.setDate(dateObj.getDate() + 1);
     var weekday_4 = dateObj.toLocaleString("default", { weekday: "long" })
-    dateObj.setDate(dateObj.getDate() + 4);
+    dateObj.setDate(dateObj.getDate() + 1);
     var weekday_5 = dateObj.toLocaleString("default", { weekday: "long" })
-    dateObj.setDate(dateObj.getDate() + 5);
+    dateObj.setDate(dateObj.getDate() + 1);
     var weekday_6 = dateObj.toLocaleString("default", { weekday: "long" })
-    dateObj.setDate(dateObj.getDate() + 6);
+    dateObj.setDate(dateObj.getDate() + 1);
     var weekday_7 = dateObj.toLocaleString("default", { weekday: "long" })
     var icon_1=`http://openweathermap.org/img/wn/${weatherObject.daily[0].weather[0].icon}.png`
     var icon_2=`http://openweathermap.org/img/wn/${weatherObject.daily[1].weather[0].icon}.png`
@@ -40,112 +50,186 @@ function SecondPage(){
     localStorage.getItem('Weather')
     return (<div>
         <div>
-            <button onClick={() => nav("/FirstPage")}className="firstpage3">Left</button>
+            <button  title="where are you going" onClick={() => nav("/FirstPage")}className="button_l">&nbsp;&nbsp;&nbsp;&nbsp;</button>
         </div>
-        <table>
+        <div className="sunrise">
+            <h3>Sunrise</h3>
+            {t_sunrise}
+        </div>
+        <div className="sunset">
+            <h3>Sunset</h3>
+            {t_sunset}
+        </div>
+        <table id="hourly_w">
             <tr>
-                <th>{hour_1}</th>
-                <th>{hour_2}</th>
-                <th>{hour_3}</th>
-                <th>{hour_4}</th>
-                <th>{hour_5}</th>
+                <th>{hour_1}:00</th>
+                <th>{hour_2}:00</th>
+                <th>{hour_3}:00</th>
+                <th>{hour_4}:00</th>
+                <th>{hour_5}:00</th>
             </tr>
             <tr>
                 <td>
                     <img className="icon" src={h_icon_1}></img>
                 </td>
+                <td>
+                    <img className="icon" src={h_icon_2}></img>
+                </td>
+                <td>
+                    <img className="icon" src={h_icon_3}></img>
+                </td>
+                <td>
+                    <img className="icon" src={h_icon_4}></img>
+                </td>
+                <td>
+                    <img className="icon" src={h_icon_5}></img>
+                </td>
             </tr>
             <tr>
-                <td>{weatherObject.hourly[0].temp}</td>
+                <td>{weatherObject.hourly[0].temp}°</td>
+                <td>{weatherObject.hourly[1].temp}°</td>
+                <td>{weatherObject.hourly[2].temp}°</td>
+                <td>{weatherObject.hourly[3].temp}°</td>
+                <td>{weatherObject.hourly[4].temp}°</td>
             </tr>
             <tr>
                 <td>
+                    <br></br>
                     <img src={rain}/>
                     <br></br>
                     {weatherObject.hourly[0].pop*100}%
+                </td>
+                <td>
+                    <br></br>
+                    <img src={rain}/>
+                    <br></br>
+                    {weatherObject.hourly[1].pop*100}%
+                </td>
+                <td>
+                    <br></br>
+                    <img src={rain}/>
+                    <br></br>
+                    {weatherObject.hourly[2].pop*100}%
+                </td>
+                <td>
+                    <br></br>
+                    <img src={rain}/>
+                    <br></br>
+                    {weatherObject.hourly[3].pop*100}%
+                </td>
+                <td>
+                    <br></br>
+                    <img src={rain}/>
+                    <br></br>
+                    {weatherObject.hourly[4].pop*100}%
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <br></br>
+                    <img src={wind}/>
+                    <br></br>
+                    {weatherObject.hourly[0].wind_speed} km/h
+                </td>
+                <td>
+                    <br></br>
+                    <img src={wind}/>
+                    <br></br>
+                    {weatherObject.hourly[1].wind_speed} km/h
+                </td>
+                <td>
+                    <br></br>
+                    <img src={wind}/>
+                    <br></br>
+                    {weatherObject.hourly[2].wind_speed} km/h
+                </td>
+                <td>
+                    <br></br>
+                    <img src={wind}/>
+                    <br></br>
+                    {weatherObject.hourly[3].wind_speed} km/h
+                </td>
+                <td>
+                    <br></br>
+                    <img src={wind}/>
+                    <br></br>
+                    {weatherObject.hourly[4].wind_speed} km/h
                 </td>
             </tr>
         </table>
         <div style={{float: 'left'}}>
         <div>
+        <br></br>
         <table id="week">
-                <tr>
-                    <th>Day</th>
-                    <th>Feelslike</th>
-                    <th>Temp</th>
-                    <th>Rain %</th>
-                    <th>Max</th>
-                    <th>Min</th>
-                </tr>
                 <tr>
                     <td>Today</td>
                     <td>
                         <img className="icon" src={icon_1}></img>
                     </td>
-                    <td>{weatherObject.daily[0].temp.day}</td>
-                    <td>{weatherObject.daily[0].pop}</td>
-                    <td>{weatherObject.daily[0].temp.max}</td>
-                    <td>{weatherObject.daily[0].temp.min}</td>
+                    <td>{Math.round(weatherObject.daily[0].temp.day)}°</td>
+                    <td><img src={rain}/> {weatherObject.daily[0].pop*100}%</td>
+                    <td>{Math.round(weatherObject.daily[0].temp.max)}°</td>
+                    <td>{Math.round(weatherObject.daily[0].temp.min)}°</td>
                 </tr>
                 <tr>
                     <td>{weekday_2}</td>
                     <td>
                         <img className="icon" src={icon_2}></img>
                     </td>
-                    <td>{weatherObject.daily[1].temp.day}</td>
-                    <td>{weatherObject.daily[1].pop}</td>
-                    <td>{weatherObject.daily[1].temp.max}</td>
-                    <td>{weatherObject.daily[1].temp.min}</td>
+                    <td>{Math.round(weatherObject.daily[1].temp.day)}°</td>
+                    <td><img src={rain}/> {weatherObject.daily[1].pop*100}%</td>
+                    <td>{Math.round(weatherObject.daily[1].temp.max)}°</td>
+                    <td>{Math.round(weatherObject.daily[1].temp.min)}°</td>
                 </tr>
                 <tr>
                     <td>{weekday_3}</td>
                     <td>
                         <img className="icon" src={icon_3}></img>
                     </td>
-                    <td>{weatherObject.daily[2].temp.day}</td>
-                    <td>{weatherObject.daily[2].pop}</td>
-                    <td>{weatherObject.daily[2].temp.max}</td>
-                    <td>{weatherObject.daily[2].temp.min}</td>
+                    <td>{Math.round(weatherObject.daily[2].temp.day)}°</td>
+                    <td><img src={rain}/> {weatherObject.daily[2].pop*100}%</td>
+                    <td>{Math.round(weatherObject.daily[2].temp.max)}°</td>
+                    <td>{Math.round(weatherObject.daily[2].temp.min)}°</td>
                 </tr>
                 <tr>
                     <td>{weekday_4}</td>
                     <td>
                         <img className="icon" src={icon_4}></img>
                     </td>
-                    <td>{weatherObject.daily[3].temp.day}</td>
-                    <td>{weatherObject.daily[3].pop}</td>
-                    <td>{weatherObject.daily[3].temp.max}</td>
-                    <td>{weatherObject.daily[3].temp.min}</td>
+                    <td>{Math.round(weatherObject.daily[3].temp.day)}°</td>
+                    <td><img src={rain}/> {weatherObject.daily[3].pop*100}%</td>
+                    <td>{Math.round(weatherObject.daily[3].temp.max)}°</td>
+                    <td>{Math.round(weatherObject.daily[3].temp.min)}°</td>
                 </tr>
                 <tr>
                     <td>{weekday_5}</td>
                     <td>
                         <img className="icon" src={icon_5}></img>
                     </td>
-                    <td>{weatherObject.daily[4].temp.day}</td>
-                    <td>{weatherObject.daily[4].pop}</td>
-                    <td>{weatherObject.daily[4].temp.max}</td>
-                    <td>{weatherObject.daily[4].temp.min}</td>
+                    <td>{Math.round(weatherObject.daily[4].temp.day)}°</td>
+                    <td><img src={rain}/> {weatherObject.daily[4].pop*100}%</td>
+                    <td>{Math.round(weatherObject.daily[4].temp.max)}°</td>
+                    <td>{Math.round(weatherObject.daily[4].temp.min)}°</td>
                 </tr>
                 <tr>
                     <td>{weekday_6}</td>
                     <td>
                         <img className="icon" src={icon_6}></img>
                     </td>
-                    <td>{weatherObject.daily[5].temp.day}</td>
-                    <td>{weatherObject.daily[5].pop}</td>
-                    <td>{weatherObject.daily[5].temp.max}</td>
-                    <td>{weatherObject.daily[5].temp.min}</td>
+                    <td>{Math.round(weatherObject.daily[5].temp.day)}°</td>
+                    <td><img src={rain}/> {weatherObject.daily[5].pop*100}%</td>
+                    <td>{Math.round(weatherObject.daily[5].temp.max)}°</td>
+                    <td>{Math.round(weatherObject.daily[5].temp.min)}°</td>
                 </tr>
                 <tr>
                     <td>{weekday_7}</td>
                     <td>
                         <img className="icon" src={icon_7}></img>
                     </td>
-                    <td>{weatherObject.daily[6].temp.day}</td>
-                    <td>{weatherObject.daily[6].pop}</td>
-                    <td>{weatherObject.daily[6].temp.max}</td>
-                    <td>{weatherObject.daily[6].temp.min}</td>
+                    <td>{Math.round(weatherObject.daily[6].temp.day)}°</td>
+                    <td><img src={rain}/> {weatherObject.daily[6].pop*100}%</td>
+                    <td>{Math.round(weatherObject.daily[6].temp.max)}°</td>
+                    <td>{Math.round(weatherObject.daily[6].temp.min)}°</td>
                 </tr>
             
         </table>

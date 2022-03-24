@@ -220,19 +220,20 @@ ul {
 /* THIRD PAGE */
 
 #Injury_And_Prevention,#Links_to_workout_plan,#items_for_clear_and_fewClouds,#items_for_rain_showerRain_andEverythingElse{
-  width: 100%;
   padding: 50px 0;
   text-align: center;
-  background-color: white;
+  background-color: transparent;
   margin-top: 20px;
   border-radius: 25px;
   overflow: scroll;
   padding-top: 0px;
+  border: 1px solid white;
+  color: white;
 
 }
 
 #items_for_clear_and_fewClouds{
-  font-size: 15px;
+  font-size: 25px;
   height: 100px;
 
   
@@ -248,32 +249,43 @@ ul {
 }
 
 #Links_to_workout_plan{
-  overflow: scroll;
-  height: 100px;
-  padding-top: 0px;
+  position: absolute;
+  top: 480px;
+  right: 95px;
+  width: 210px;
+  font-size: 15px;
 }
 #week {
   font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
+  position: relative;
+  top: 50px;
+  left: 13%;
+  border-collapse: separate;
   width: 100%;
   border: 1px solid white;
   color: white;
-}
-
-#week td, #week th {
-  padding: 8px;
-}
-
-#week tr{background-color: transparent;}
-
-#week tr:hover {background-color: transparent;}
-
-#week th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
+  border-radius:6px;
   background-color: transparent;
 }
+#week td, #week th {
+  padding: 6px;
+}
+#hourly_w {
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  top: 50px;
+  border-collapse: separate;
+  width: 100%;
+  border: 1px solid white;
+  color: white;
+  border-radius:6px;
+  background-color: transparent;
+}
+#hourly_w td, #hourly_w th {
+  padding: 6px;
+}
+#hourly_w td + td { border-left:2px solid white; }
+#hourly_w th + th { border-left:2px solid white; }
 .icon {
   height: 30px;
   width: 30px; 
@@ -284,4 +296,26 @@ ul {
   height: auto;
   left: 40%;
   margin-top: 675px;
+}
+.sunset{
+  position: absolute;
+  left:85%;
+  color: white;
+}
+.sunrise{
+  position: absolute;
+  left:5%;
+  color: white;
+}
+.button_l{
+  position: absolute;
+  top: 5px;
+  border-radius: 50%;
+  font-size: small;
+}
+.button_l:hover{
+  background-color: gray;
+}
+.page3_title{
+  color: white;
 }

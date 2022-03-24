@@ -49,15 +49,13 @@ function ThirdPage(){
     }, []);
 
     return (<div>
-        <h1>Reccomendations, Injury & Prevention and Workout Plan </h1>
+        <div className="page3_title">
+            <h1>Reccomendations, Injury &#38; Prevention and Workout Plan </h1>
+        </div>
 
-        
         <div style={{float: 'right'}}>
         <button onClick={() => nav("/FirstPage")}className="secondpage1">Right</button>
         </div>
-        
-        
-
 
         {new_a.length===5? <div className="reccomendations">
         <div id="items_for_clear_and_fewClouds">
@@ -87,34 +85,26 @@ function ThirdPage(){
 
                 <h2>Types of Different Injuries:</h2>
                 
-                <h2 id="KneePain">
-                    Knee Pain:
+                
+                    <h3>Knee Pain:</h3>
                     <p>
                         Dull pain which is around the front, behind or around the knee/kneecap.
                         <link></link>
                     </p>
-
-                </h2>
-                <h2 id="Achiles Pain"> 
-                    Achiles Pain:
+                    <h3>Achiles Pain:</h3>
                     <p>
                         Pain or swelling at the back of the ankle or heel. The pain may be minor but continous or sharp and sudden.
                     </p>
-
-                </h2>
-
-                
             </section>
 
             <section id="Prevention">
-                <h2 id="Prevention"> Prevention Of Injuries:
+                 <h2>Prevention Of Injuries:</h2>
                 <p>
                     Preventing all the above can be down by properly warming up i.e. a light jog or a brisk walk or by
                     doing squats to engage the lower body. Furthermore, warming down after running will help with recovering.
                 </p>
 
 
-                </h2>
             </section>
 
 
@@ -126,11 +116,12 @@ function ThirdPage(){
         
             <h1>Workout Plans for 5K and 10K </h1>
                 <section id="5k">
-                    <h2>Couch to 5K</h2>
+                    Couch to 5K
+                    <br></br>
                     <a href="https://www.nhs.uk/live-well/exercise/couch-to-5k-week-by-week/" target="_blank" rel="noopener noreferrer">Link To Couch To 5K Plan</a>
                 </section>
                 <section id="10K">
-                    <h2>10K Plan</h2>
+                    10K Plan
                     <a href="https://www.verywellfit.com/beginner-runners-10k-training-schedule-2911611" target="_blank" rel="noopener noreferrer">Link to 10K Plan</a>
 
                 </section>
