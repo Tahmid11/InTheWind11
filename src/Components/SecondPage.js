@@ -86,11 +86,11 @@ function SecondPage(){
                 </td>
             </tr>
             <tr>
-                <td>{weatherObject.hourly[0].temp}°</td>
-                <td>{weatherObject.hourly[1].temp}°</td>
-                <td>{weatherObject.hourly[2].temp}°</td>
-                <td>{weatherObject.hourly[3].temp}°</td>
-                <td>{weatherObject.hourly[4].temp}°</td>
+                <td>{Math.round(weatherObject.hourly[0].temp)}°</td>
+                <td>{Math.round(weatherObject.hourly[1].temp)}°</td>
+                <td>{Math.round(weatherObject.hourly[2].temp)}°</td>
+                <td>{Math.round(weatherObject.hourly[3].temp)}°</td>
+                <td>{Math.round(weatherObject.hourly[4].temp)}°</td>
             </tr>
             <tr>
                 <td>
