@@ -8,42 +8,44 @@ import { useNavigate } from "react-router-dom";
 //  links to websites that sell items of clothing that may be beneficial to the runner.
 
 function ThirdPage(){
+     // Getting the local object and storing it into a variable.
     const weatherObject = JSON.parse(localStorage.getItem('Weather'));
     const nav=useNavigate();
     const [items,setItems]=useState([]);
-    const new_a=[];
 
+    // Storing items of clothing dependent on the description given.
+    const arrayOfItems=[];
     useEffect( () => {
         if(weatherObject.daily[0].weather[0].description==="clear sky"){
-            new_a.push("Running Shoes")
-            new_a.push("Running Socks")
-            new_a.push("Sports Cap")
-            new_a.push("Wear Lighter Coloured Clothing")
-            new_a.push("Sports gels")
+            arrayOfItems.push("Running Shoes")
+            arrayOfItems.push("Running Socks")
+            arrayOfItems.push("Sports Cap")
+            arrayOfItems.push("Wear Lighter Coloured Clothing")
+            arrayOfItems.push("Sports gels")
         }else if(weatherObject.daily[0].weather[0].description==="few clouds"){
-            new_a.push("Wear Lighter Coloured Clothing")
-            new_a.push("Running Shoes")
-            new_a.push("Running Socks")
-            new_a.push("Wear a headband")
-            new_a.push("Sports gels")
+            arrayOfItems.push("Wear Lighter Coloured Clothing")
+            arrayOfItems.push("Running Shoes")
+            arrayOfItems.push("Running Socks")
+            arrayOfItems.push("Wear a headband")
+            arrayOfItems.push("Sports gels")
         }else if(weatherObject.daily[0].weather[0].description==="shower rain" ||weatherObject.daily[0].weather[0].description==="rain"){
-            new_a.push("Wear a Water Resistant Jacket")
-            new_a.push("Running Shoes")
-            new_a.push("Running Socks")
-            new_a.push("A Sports Cap")
-            new_a.push("High Visibility Clothing")
-            new_a.push("Headlamp")
-            new_a.push("Apply Anti Chafe Balm To Prevent Chafing.")
+            arrayOfItems.push("Wear a Water Resistant Jacket")
+            arrayOfItems.push("Running Shoes")
+            arrayOfItems.push("Running Socks")
+            arrayOfItems.push("A Sports Cap")
+            arrayOfItems.push("High Visibility Clothing")
+            arrayOfItems.push("Headlamp")
+            arrayOfItems.push("Apply Anti Chafe Balm To Prevent Chafing.")
         }else{
-            new_a.push("Wear A Wind Resistant Jacket")
-            new_a.push("Running Shoes")
-            new_a.push("Running Socks")
-            new_a.push("A Sports Cap")
-            new_a.push("High Visibility Clothing")
-            new_a.push("Wear Gloves")
-            new_a.push("Headlamp")
+            arrayOfItems.push("Wear A Wind Resistant Jacket")
+            arrayOfItems.push("Running Shoes")
+            arrayOfItems.push("Running Socks")
+            arrayOfItems.push("A Sports Cap")
+            arrayOfItems.push("High Visibility Clothing")
+            arrayOfItems.push("Wear Gloves")
+            arrayOfItems.push("Headlamp")
         }
-        setItems(new_a);
+        setItems(arrayOfItems);
     }, []);
 
     return (
@@ -52,7 +54,7 @@ function ThirdPage(){
             <h1>Essentials</h1>
         </div>
 
-        {new_a.length===5? <div className="reccomendations">
+        {arrayOfItems.length===5? <div className="reccomendations">
         <div id="items_for_clear_and_fewClouds">
             <h3>Recommended Clothing &#38; Items</h3>
             <p>{items[0]}</p>

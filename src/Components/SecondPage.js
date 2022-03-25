@@ -2,8 +2,10 @@ import React from "react"
 import {useNavigate} from "react-router-dom";
 import rain from './assets/raindrop.png';
 import wind from './assets/wind.png';
+// This page displays weather information by hourly and a weekly report.
 
 function SecondPage(){
+    // Getting the local object and storing it into a variable.
     const weatherObject = JSON.parse(localStorage.getItem('Weather'));
     const nav=useNavigate();
     var dateObj = new Date()
@@ -22,11 +24,15 @@ function SecondPage(){
     hour_4=hour_4.getHours();
     var hour_5 = new Date(weatherObject.hourly[4].dt * 1000);
     hour_5=hour_5.getHours();
+
+    // An image describing the weather is used from the API and stored into a variable.
     var h_icon_1=`http://openweathermap.org/img/wn/${weatherObject.hourly[0].weather[0].icon}.png`
     var h_icon_2=`http://openweathermap.org/img/wn/${weatherObject.hourly[1].weather[0].icon}.png`
     var h_icon_3=`http://openweathermap.org/img/wn/${weatherObject.hourly[2].weather[0].icon}.png`
     var h_icon_4=`http://openweathermap.org/img/wn/${weatherObject.hourly[3].weather[0].icon}.png`
     var h_icon_5=`http://openweathermap.org/img/wn/${weatherObject.hourly[4].weather[0].icon}.png`
+
+    // Setting the dates.
     dateObj.setDate(dateObj.getDate() + 1);
     var weekday_2 = dateObj.toLocaleString("default", { weekday: "long" })
     dateObj.setDate(dateObj.getDate() + 1);
@@ -39,6 +45,8 @@ function SecondPage(){
     var weekday_6 = dateObj.toLocaleString("default", { weekday: "long" })
     dateObj.setDate(dateObj.getDate() + 1);
     var weekday_7 = dateObj.toLocaleString("default", { weekday: "long" })
+
+    // An image describing the weather is used from the API and stored into a variable.
     var icon_1=`http://openweathermap.org/img/wn/${weatherObject.daily[0].weather[0].icon}.png`
     var icon_2=`http://openweathermap.org/img/wn/${weatherObject.daily[1].weather[0].icon}.png`
     var icon_3=`http://openweathermap.org/img/wn/${weatherObject.daily[2].weather[0].icon}.png`
@@ -249,6 +257,8 @@ function SecondPage(){
     }
 export default SecondPage;
 
+// This function resolves the issue of displaying time, more specifically the minutes correct.
+// Instead of '6:7' it's '6:07'.
 function randomS(number){
     if (number<10){
         number="0"+number
